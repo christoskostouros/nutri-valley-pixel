@@ -452,8 +452,9 @@ button {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-  padding: 40px;
+  padding: 20px 20px 20px 40px;
   display: flex;
+  overflow: hidden;
 }
 
 .mega-menu.active {
@@ -464,6 +465,7 @@ button {
 .mega-menu__left {
   width: 400px;
   flex-shrink: 0;
+  padding-top: 20px;
 }
 
 .mega-menu__category {
@@ -526,9 +528,10 @@ button {
 .mega-menu__right {
   margin-left: auto;
   width: 670px;
-  height: 370px;
+  height: 410px;
   flex-shrink: 0;
   transition: width 0.3s ease;
+  align-self: center;
 }
 
 .mega-menu__right:has(.mega-right__kids[style*="block"]) {
