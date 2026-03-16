@@ -528,6 +528,11 @@ button {
   width: 670px;
   height: 410px;
   flex-shrink: 0;
+  transition: width 0.3s ease;
+}
+
+.mega-menu__right:has(.mega-right__kids[style*="block"]) {
+  width: 1340px;
 }
 
 .mega-menu__right img {
@@ -535,6 +540,42 @@ button {
   height: 100%;
   object-fit: cover;
   border-radius: 20px;
+}
+
+/* Kids mega menu cards */
+.mega-right__kids {
+  width: 100%;
+  height: 100%;
+}
+
+.kids-cards-row {
+  display: flex;
+  gap: 20px;
+  height: 100%;
+  align-items: flex-start;
+}
+
+.kids-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.kids-card__img {
+  width: 100%;
+  height: 320px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px;
+}
+
+.kids-card__logo {
+  width: auto !important;
+  height: 50px !important;
+  object-fit: contain !important;
+  border-radius: 0 !important;
 }
 
 /* Mega menu state 2: product cards */

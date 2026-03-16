@@ -82,7 +82,31 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
       <div class="mega-menu__right" id="megaRight">
-        <img src="/img/group-25@1x.png" alt="Nutri Valley Products" />
+        <!-- Adults content -->
+        <div class="mega-right__adults" id="megaRightAdults">
+          <img src="/img/group-25@1x.png" alt="Nutri Valley Products" />
+        </div>
+        <!-- Kids content -->
+        <div class="mega-right__kids" id="megaRightKids" style="display: none;">
+          <div class="kids-cards-row">
+            <div class="kids-card">
+              <div class="kids-card__img" style="background-image: url('/img/kids-card-peppa@1x.png');"></div>
+              <img class="kids-card__logo" src="/img/logo-peppa@1x.png" alt="Peppa Pig" />
+            </div>
+            <div class="kids-card">
+              <div class="kids-card__img" style="background-image: url('/img/kids-card-pjmasks@1x.png');"></div>
+              <img class="kids-card__logo" src="/img/logo-pjmasks@1x.png" alt="PJ Masks" />
+            </div>
+            <div class="kids-card">
+              <div class="kids-card__img" style="background-image: url('/img/kids-card-minions@1x.png');"></div>
+              <img class="kids-card__logo" src="/img/logo-minions@1x.png" alt="Minions" />
+            </div>
+            <div class="kids-card">
+              <div class="kids-card__img" style="background-image: url('/img/kids-card-scooby@1x.png');"></div>
+              <img class="kids-card__logo" src="/img/logo-scooby@1x.png" alt="Scooby-Doo" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -383,9 +407,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
       <div class="footer__attribution">
-        <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">
-          Created with Perplexity Computer
-        </a>
+        By ThinkTank Digital Marketing Agency
       </div>
     </footer>
   </div>
@@ -454,10 +476,18 @@ import Layout from '../layouts/Layout.astro';
 
     // Mega menu category hover
     const categories = document.querySelectorAll('.mega-menu__category');
+    const megaRightAdults = document.getElementById('megaRightAdults');
+    const megaRightKids = document.getElementById('megaRightKids');
+    const megaSubcats = document.getElementById('megaSubcats');
+
     categories.forEach(cat => {
       cat.addEventListener('mouseenter', () => {
         categories.forEach(c => c.classList.remove('active'));
         cat.classList.add('active');
+        const isKids = cat.dataset.category === 'kids';
+        if (megaRightAdults) megaRightAdults.style.display = isKids ? 'none' : 'block';
+        if (megaRightKids) megaRightKids.style.display = isKids ? 'block' : 'none';
+        if (megaSubcats) megaSubcats.style.display = isKids ? 'none' : 'flex';
       });
     });
 
