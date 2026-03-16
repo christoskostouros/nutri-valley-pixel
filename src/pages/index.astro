@@ -158,24 +158,32 @@ import Layout from '../layouts/Layout.astro';
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
         dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci.
       </p>
-      <div class="adult-products__cards">
-        <div class="adult-product-card" style="background-image: url('/img/group-40-1@1x.png');">
-          <span class="adult-product-card__name">PREMIUM<br>ΚΟΝΣΕΡΒΕΣ</span>
+      <div class="adult-products__slider">
+        <div class="adult-products__arrow adult-products__arrow--left" id="adultLeft">
+          <img src="/img/path-69@1x.png" alt="Previous" />
         </div>
-        <div class="adult-product-card" style="background-image: url('/img/group-42@1x.png');">
-          <span class="adult-product-card__name">ΜΠΑΡΕΣ<br>ΠΡΩΤΕΪΝΗΣ</span>
+        <div class="adult-products__cards" id="adultCards">
+          <div class="adult-product-card" style="background-image: url('/img/group-40-1@1x.png');">
+            <span class="adult-product-card__name">PREMIUM<br>ΚΟΝΣΕΡΒΕΣ</span>
+          </div>
+          <div class="adult-product-card" style="background-image: url('/img/group-42@1x.png');">
+            <span class="adult-product-card__name">ΜΠΑΡΕΣ<br>ΠΡΩΤΕΪΝΗΣ</span>
+          </div>
+          <div class="adult-product-card" style="background-image: url('/img/group-48@1x.png');">
+            <span class="adult-product-card__name">ΓΚΟΦΡΕΤΕΣ</span>
+          </div>
+          <div class="adult-product-card" style="background-image: url('/img/group-44@1x.png');">
+            <span class="adult-product-card__name">ΤΑΧΙΝΙ</span>
+          </div>
+          <div class="adult-product-card" style="background-image: url('/img/group-46@1x.png');">
+            <span class="adult-product-card__name">ΝΙΦΑΔΕΣ<br>ΒΡΩΜΗΣ</span>
+          </div>
+          <div class="adult-product-card" style="background-image: url('/img/group-40-1@1x.png');">
+            <span class="adult-product-card__name">PREMIUM<br>ΚΟΝΣΕΡΒΕΣ</span>
+          </div>
         </div>
-        <div class="adult-product-card" style="background-image: url('/img/group-48@1x.png');">
-          <span class="adult-product-card__name">ΓΚΟΦΡΕΤΕΣ</span>
-        </div>
-        <div class="adult-product-card" style="background-image: url('/img/group-44@1x.png');">
-          <span class="adult-product-card__name">ΤΑΧΙΝΙ</span>
-        </div>
-        <div class="adult-product-card" style="background-image: url('/img/group-46@1x.png');">
-          <span class="adult-product-card__name">ΝΙΦΑΔΕΣ<br>ΒΡΩΜΗΣ</span>
-        </div>
-        <div class="adult-product-card" style="background-image: url('/img/group-40-1@1x.png');">
-          <span class="adult-product-card__name">PREMIUM<br>ΚΟΝΣΕΡΒΕΣ</span>
+        <div class="adult-products__arrow adult-products__arrow--right" id="adultRight">
+          <img src="/img/path-66@1x.png" alt="Next" />
         </div>
       </div>
       <div class="adult-products__cta">
@@ -229,7 +237,7 @@ import Layout from '../layouts/Layout.astro';
     <section class="about-section" id="about">
       <div class="about-card">
         <p class="about-card__statement bold-21">
-          Η NUTRI VALLEY ΔΗΜΙΟΥΡΓΕΙ ΠΡΟΪΟΝΤΑ<br>ΠΟΥ ΚΑΝΟΥΝ ΤΗΝ ΚΑΘΗΜΕΡΙΝΗ ΔΙΑΤΡΟΦΗ<br>ΠΙΟ ΕΥΚΟΛΗ, ΠΙΟ ΥΓΙΕΙΝΗ ΚΑΙ ΠΙΟ ΑΠΟΛΑΥΣΤΙΚΗ<br>ΓΙΑ ΜΙΚΡΟΥΣ ΚΑΙ ΜΕΓΑΛΟΥΣ.
+          Η NUTRI VALLEY ΔΗΜΙΟΥΡΓΕΙ ΠΡΟΪΟΝΤΑ ΠΟΥ ΚΑΝΟΥΝ ΤΗΝ ΚΑΘΗΜΕΡΙΝΗ ΔΙΑΤΡΟΦΗ ΠΙΟ ΕΥΚΟΛΗ, ΠΙΟ ΥΓΙΕΙΝΗ ΚΑΙ ΠΙΟ ΑΠΟΛΑΥΣΤΙΚΗ ΓΙΑ ΜΙΚΡΟΥΣ ΚΑΙ ΜΕΓΑΛΟΥΣ.
         </p>
         <div class="about-card__checklist">
           <div class="about-card__checklist-item">
@@ -315,7 +323,7 @@ import Layout from '../layouts/Layout.astro';
           <p class="events-section__heading bold-21">
             Η NUTRI VALLEY ΤΑΞΙΔΕΥΕΙ ΠΑΝΤΟΥ. ΕΛΑΤΕ ΝΑ ΓΝΩΡΙΣΤΟΥΜΕ ΣΕ ΚΑΠΟΙΟ EVENT ΜΑΣ!
           </p>
-          <p class="events-section__desc regular-17" style="margin-top: 74px;">
+          <p class="events-section__desc regular-17">
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
             laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, euismod&nbsp;&nbsp;quis notrud
             exerci tation ulorper suscipit lobortis nisl ut aliquip.
@@ -489,6 +497,20 @@ import Layout from '../layouts/Layout.astro';
         if (megaRightKids) megaRightKids.style.display = isKids ? 'block' : 'none';
         if (megaSubcats) megaSubcats.style.display = isKids ? 'none' : 'flex';
       });
+    });
+
+    // Adult Products Slider Arrows
+    const adultCards = document.getElementById('adultCards');
+    const adultLeft = document.getElementById('adultLeft');
+    const adultRight = document.getElementById('adultRight');
+    const scrollAmount = 350;
+
+    adultRight?.addEventListener('click', () => {
+      adultCards?.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+
+    adultLeft?.addEventListener('click', () => {
+      adultCards?.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
     });
 
     // Smooth scroll for anchor links

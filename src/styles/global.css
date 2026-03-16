@@ -526,7 +526,7 @@ button {
 .mega-menu__right {
   margin-left: auto;
   width: 670px;
-  height: 410px;
+  height: 370px;
   flex-shrink: 0;
   transition: width 0.3s ease;
 }
@@ -535,7 +535,7 @@ button {
   width: 1340px;
 }
 
-.mega-menu__right img {
+.mega-right__adults img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -736,15 +736,52 @@ button {
   height: 62px;
 }
 
+.adult-products__slider {
+  position: relative;
+  width: 1920px;
+  margin-top: 100px;
+}
+
+.adult-products__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: opacity 0.3s ease;
+}
+
+.adult-products__arrow:hover {
+  opacity: 0.6;
+}
+
+.adult-products__arrow img {
+  width: 14px;
+  height: 23px;
+  object-fit: contain;
+}
+
+.adult-products__arrow--left {
+  left: 20px;
+}
+
+.adult-products__arrow--right {
+  right: 20px;
+}
+
 .adult-products__cards {
   display: flex;
   gap: 50px;
-  margin-top: 100px;
-  padding: 0 50px;
+  padding: 0 70px;
   overflow-x: auto;
   scrollbar-width: none;
-  width: 1920px;
-  justify-content: flex-start;
+  width: 100%;
+  scroll-behavior: smooth;
 }
 
 .adult-products__cards::-webkit-scrollbar {
@@ -892,7 +929,6 @@ button {
   text-align: center;
   white-space: nowrap;
   transition: background-color 0.3s ease;
-  position: relative;
   overflow: hidden;
 }
 
@@ -945,7 +981,6 @@ button {
 }
 
 .about-card__statement {
-  white-space: pre-line;
   width: 515px;
   position: absolute;
   top: 65px;
@@ -993,6 +1028,7 @@ button {
   background-color: var(--gray-nurse);
   margin-top: 50px;
   padding: 174px 0 0;
+  padding-bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1019,12 +1055,12 @@ button {
 
 .recipe-card {
   width: 363px;
-  height: 480px;
   flex-shrink: 0;
   overflow: hidden;
   position: relative;
   cursor: pointer;
   transition: transform 0.3s ease;
+  border-radius: 20px;
 }
 
 .recipe-card:hover {
@@ -1033,14 +1069,14 @@ button {
 
 .recipe-card__image {
   width: 100%;
-  height: calc(100% - 100px);
+  height: 380px;
   background-position: 50% 50%;
   background-size: cover;
 }
 
 .recipe-card__info {
   background-color: var(--white);
-  height: 100px;
+  height: 80px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -1181,6 +1217,7 @@ button {
   cursor: pointer;
   overflow: hidden;
   transition: transform 0.3s ease;
+  border-radius: 20px;
 }
 
 .blog-card:hover {
@@ -1192,6 +1229,7 @@ button {
   height: 740px;
   background-position: 50% 50%;
   background-size: cover;
+  border-radius: 20px 20px 0 0;
 }
 
 .blog-card__info {
@@ -1205,6 +1243,7 @@ button {
   flex-direction: column;
   justify-content: center;
   padding: 0 39px;
+  border-radius: 0 0 20px 20px;
 }
 
 .blog-card__title {
