@@ -967,7 +967,7 @@ button {
   width: 1820px;
   height: 805px;
   margin-left: 50px;
-  background-image: url('/img/mask-group-1@1x.png');
+  background-image: url('/img/mask-group-1@1x.webp');
   background-position: 50% 50%;
   background-size: cover;
   display: flex;
@@ -1126,7 +1126,7 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/img/group-66@1x.png');
+  background-image: url('/img/group-66@1x.webp');
   background-position: 50% 50%;
   background-size: cover;
   mix-blend-mode: multiply;
